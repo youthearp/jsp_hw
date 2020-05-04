@@ -19,7 +19,7 @@
 		else {
 			MidUser midUser = new MidUser(userName, userSex);
 			session.setAttribute("miduser", midUser);
-			response.sendRedirect("mid4.jsp");
+			response.sendRedirect("mid4_success.jsp");
 			return;
 		}
 	}
@@ -97,6 +97,9 @@ div.error {
 	background-color: #fdd;
 	border: 1px solid #faa;
 }
+div.radio{
+	display : block;
+}
 </style>
 </head>
 <body>
@@ -110,7 +113,7 @@ div.error {
 				<label>이름</label> <input type="text" class="text" name="userName"
 					value="<%=userName%>" />
 			</div>
-			<div>
+			<div class = "radio">
 				<label>성별</label> <input type="radio" name="userSex" value="남자">남자
 				<input type="radio" name="userSex" value="여자">여자
 			</div>
