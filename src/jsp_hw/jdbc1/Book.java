@@ -4,7 +4,7 @@ public class Book {
 	int id;
 	String title;
 	String author;
-	int categoryId;
+	String categoryName;
 	int price;
 	String publisher;
 
@@ -32,12 +32,12 @@ public class Book {
 		this.author = author;
 	}
 
-	public int getCategoryId() {
-		return categoryId;
+	public String getCategoryName() {
+		return categoryName;
 	}
 
-	public void setCategoryId(int categoryId) {
-		this.categoryId = categoryId;
+	public void setCategoryName(String categoryName) {
+		this.categoryName = categoryName;
 	}
 
 	public int getPrice() {

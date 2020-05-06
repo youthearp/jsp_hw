@@ -10,8 +10,8 @@ import jsp_hw.DB;
 
 public class BookDAO {
     public static List<Book> findAll() throws Exception {
-        String sql = "SELECT b.*, c.categoryId " +
-                     "FROM book b LEFT JOIN category c ON c.categoryId = c.id";
+        String sql = "SELECT b.*, c.categoryName " +
+                     "FROM Book b LEFT JOIN category c ON b.categoryId = c.id";
         try (Connection connection = DB.getConnection("book");
              PreparedStatement statement = connection.prepareStatement(sql);
              ResultSet resultSet = statement.executeQuery()) {
@@ -21,7 +21,7 @@ public class BookDAO {
                 book.setId(resultSet.getInt("id"));
                 book.setTitle(resultSet.getString("title"));
                 book.setAuthor(resultSet.getString("author"));
-                book.setCategoryId(resultSet.getInt("categoryId"));
+                book.setCategoryName(resultSet.getString("categoryName"));
                 book.setPrice(resultSet.getInt("price"));
                 book.setPublisher(resultSet.getString("publisher"));
                 list.add(book);
